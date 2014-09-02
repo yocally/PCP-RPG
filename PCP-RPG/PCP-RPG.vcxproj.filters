@@ -18,5 +18,8 @@
     <ClCompile Include="pcp-rpg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Writeit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
