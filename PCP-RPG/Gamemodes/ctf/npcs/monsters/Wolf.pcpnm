@@ -1,0 +1,15 @@
+Name:Wolf
+Breed:Dog
+Gender:b
+HP:500
+SP:500
+MP:0
+Attack:50, 100
+Defence:10
+Attack Type:melee
+Attack Effects:bleed 20
+Weakness:melee
+Weaknesses:fire
+Drops:hide
+Affiliation:wild
+Description:it's wolfmind

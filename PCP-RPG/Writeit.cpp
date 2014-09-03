@@ -35,29 +35,56 @@ namespace charinfo {
 	int LuckIn;
 }
 
+void makefolder(string folder) {
+	string temp = "mkdir " + folder;
+		system(temp.c_str());
+}
+
 void initFolders() {
-	system("mkdir Saves");
-	system("mkdir Gamemode");
-	system("mkdir Menu");
+	makefolder("Saves");
+	makefolder("Gamemodes");
+	makefolder("Menus");
 	::cout << "Folder Init completed\n";
 }
 
-void wrouts(::string name, ::string GM) {
-	ofstream wrout("Saves\\" + name + ".pcps");
-	if (wrout.is_open()) {
-		wrout << "Name:" << name << "\n";
-		wrout << "Gamemode:" << GM << "\n";
-		wrout.close();
+void menus(string folder, string mmenus) {
+	string menuout;
+	ifstream menu;
+	menu.open(folder + "\\" + mmenus + ".pcpm");
+	if (menu.is_open())
+	{
+		while (getline(menu, menuout))
+		{
+			cout << menuout <<endl;
+		}
+		cout << "			   Input:";
 	}
-	else ::cerr << "Unable to open file";
+	else cout << "installed wrong";
+	menu.close();
+}
+
+void wrouts(::string name, ::string GM) {
+	ofstream main("Saves\\" + name + "\\main.pcps");
+	ofstream stats("Saves\\" + name + "\\stats.pcps");
+	ofstream location("Saves\\" + name + "\\location.pcps");
+	ofstream condtion("Saves\\" + name + "\\condtion.pcps");
+	ofstream quests("Saves\\" + name + "\\quests.pcps");
+	ofstream inventory("Saves\\" + name + "\\inventory.pcps");
+	if (main.is_open()) {
+		main << "Name:" << name << "\n";
+		main << "Gamemode:" << GM << "\n";
+		main.close();
+	}
+	else ::cerr << "Unable to open main file";
 }
 void wrins(::string name, ::string GM) {
-	ifstream wrin;
-	wrin.open("Saves\\" + name + ".pcps");
-	wrin >> name >> GM;
+	ifstream main;
+	main.open("Saves\\" + name + "\\main.pcps");
+	main >> name >> GM;
 	name.erase(0, 5);
 	GM.erase(0, 9);
-	wrin.close();
+	main.close();
+
 }
 
 void save() {
@@ -68,6 +95,7 @@ void newSave() {
 	getline(cin, charinfo::nameIn);
 	::cout << "		  Gamemode::Name:";
 	getline(cin, charinfo::GMIn);
+	makefolder("Saves\\" + charinfo::nameIn);
 	save();
 }
 void load() {
