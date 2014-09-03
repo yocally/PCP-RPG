@@ -72,6 +72,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="pcp-rpg.cpp" />
+    <ClCompile Include="Menus.cpp" />
     <ClCompile Include="Writeit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
