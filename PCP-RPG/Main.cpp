@@ -4,23 +4,31 @@
 
 using namespace std;
 
-//External Variables
-::string re;
+//Variables
 bool isQuit = false;
+::string re;
+
+//Reterns
+::string returnRe() {
+	return re;
+}
+
+//External Variables
+
 
 //External Declarations
 void initFolders();
-void save();
-void newSave();
-void load();
-void menumain();
-void helpcred();
 void checkArgs();
 void checkmenu();
-void run();
 
 void cls() {
 	system("CLS");
+}
+
+
+
+void quit(){
+	isQuit = true;
 }
 
 void run(){

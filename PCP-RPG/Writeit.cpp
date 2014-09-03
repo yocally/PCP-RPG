@@ -5,17 +5,40 @@
 
 using namespace std;
 
+//Variables
+
+
+//Reterns
+
+
+//External Variables
+
+
+//External declarations
+
+
 //Character information
 namespace charinfo {
 	::string nameIn;
 	::string GMIn;
 	int LVLIn;
-	int HP;
-	int GP;
+	int HPIn;
+	int GPIn;
+	int STRIn;
+	int DEXIn;
+	int INTIn;
+	int CHRIn;
+	int WILIn;
+	int WISIn;
+	int REPIn;
+	int POTIn;
+	int LuckIn;
 }
 
 void initFolders() {
 	system("mkdir Saves");
+	system("mkdir Gamemode");
+	system("mkdir Menu");
 	::cout << "Folder Init completed\n";
 }
 

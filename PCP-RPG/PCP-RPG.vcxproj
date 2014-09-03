@@ -71,7 +71,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="pcp-rpg.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menus.cpp" />
     <ClCompile Include="Writeit.cpp" />
   </ItemGroup>

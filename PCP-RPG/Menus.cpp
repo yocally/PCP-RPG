@@ -4,14 +4,21 @@
 
 using namespace std;
 
+//Variables
+
+
+//Reterns
+
+
 //External Variables
-::string re;
-bool isQuit = false;
+::string returnRe();
+
 
 //External declarations
 void initFolders();
 void newSave();
 void load();
+void quit();
 
 void indent(int i) {
 	//Function for creating indentations
@@ -78,7 +85,7 @@ void checkArgs() {
 			menu = 2;
 		}
 		if (re == "q") {
-			isQuit = true;
+			quit();
 		}
 	}
 	if (menu == 2) {
