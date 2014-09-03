@@ -9,7 +9,7 @@ bool isQuit = false;
 ::string re;
 
 //Reterns
-::string returnRe() {
+::string rRe() {
 	return re;
 }
 

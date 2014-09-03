@@ -11,7 +11,7 @@ using namespace std;
 
 
 //External Variables
-::string returnRe();
+::string rRe();
 
 
 //External declarations
@@ -72,24 +72,24 @@ void checkmenu() {
 
 void checkArgs() {
 	if (menu == 1) {
-		if (re == "n") {
+		if (rRe() == "n") {
 			newSave();
 		}
-		if (re == "l") {
+		if (rRe() == "l") {
 			load();
 		}
-		if (re == "o") {
+		if (rRe() == "o") {
 
 		}
-		if (re == "h") {
+		if (rRe() == "h") {
 			menu = 2;
 		}
-		if (re == "q") {
+		if (rRe() == "q") {
 			quit();
 		}
 	}
 	if (menu == 2) {
-		if (re == "b") {
+		if (rRe() == "b") {
 			menu = 1;
 		}
 	}
