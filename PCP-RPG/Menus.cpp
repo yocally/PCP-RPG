@@ -21,6 +21,8 @@ void newSave();
 void load();
 void quit();
 void menus(string folder, string menus);
+void loadFile(::string mode, ::string file);
+void quick();
 
 void indent(int i) {
 	//Function for creating indentations
@@ -36,6 +38,12 @@ void checkmenu() {
 	if (menu == 2) {
 		menus("Menus", "Credits");;
 	}
+}
+
+void test() {
+	string str;
+	int in = 10;
+	
 }
 
 void checkArgs() {
@@ -54,6 +62,13 @@ void checkArgs() {
 		}
 		if (rRe() == "q") {
 			quit();
+		}
+		if (rRe() == "p") {
+			loadFile("ctf", "Wolf");
+			quick();
+		}
+		if (rRe() == "t") {
+			test();
 		}
 	}
 	if (menu == 2) {

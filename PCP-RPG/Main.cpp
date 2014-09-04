@@ -34,7 +34,7 @@ void quit(){
 void run(){
 	initFolders();
 	while (!::isQuit) {
-		cls();
+		// cls();
 		checkmenu();
 		::getline(::cin, ::re);
 		checkArgs();

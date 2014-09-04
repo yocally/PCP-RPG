@@ -7,17 +7,6 @@ using namespace std;
 
 //Variables
 
-
-//Reterns
-
-
-//External Variables
-
-
-//External declarations
-
-
-//Character information
 namespace charinfo {
 	::string nameIn;
 	::string GMIn;
@@ -34,6 +23,15 @@ namespace charinfo {
 	int POTIn;
 	int LuckIn;
 }
+
+//Reterns
+
+
+//External Variables
+
+
+//External declarations
+
 
 void makefolder(string folder) {
 	string temp = "mkdir " + folder;
