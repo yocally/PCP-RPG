@@ -7,20 +7,33 @@
 
 using namespace std;
 
+//Variables
+::vector<::string> iteration;
 namespace monsterInfo {
 	::string name;
 	::string desc;
 	::string breed;
 	::string gender;
-	int HP[2];
-	int SP[2];
-	int MP[2];
-	int atk[2];
-	int def[2];
+	vector<int> HP;
+	vector<int> SP;
+	vector<int> MP;
+	vector<int> atk;
+	vector<int> def;
 	::string atkType;
 	::string atkTypeWeak;
 	::string drops[];
 }
+
+//Reterns
+
+
+//External Variables
+
+
+
+//External declarations
+
+
 
 ::vector<::string> &split(const ::string &s, char delim, ::vector<::string> &elems) {
 	::stringstream ss(s);
@@ -35,6 +48,21 @@ namespace monsterInfo {
 	::vector<::string> elems;
 	split(s, delim, elems);
 	return elems;
+}
+
+void cstringr(::string name, ::string ignore) {
+	if (iteration.at(0) == ignore) {
+		name = iteration.at(1);
+	}
+}
+
+void cintr(::vector<int> number, ::string ignore) {
+	if (iteration.at(0) == ignore) {
+		::vector<string> s = split(iteration.at(1), ',');
+		for (int j = 0; j < 1; j++) {
+			number.push_back(atoi(s.at(j).c_str()));
+		}
+	}
 }
 
 void loadFile(::string mode, ::string file) {
@@ -52,64 +80,31 @@ void loadFile(::string mode, ::string file) {
 		cout << "Error loading file: " << dir << endl;
 		return;
 	}
+
+
 	
 	// Now that we have the file loaded into the vector, we're going to parse it
 	for (int v = 0; v < lines.size(); v++) {
 		::vector<::string> iteration = split(lines.at(v), ':');
-		if (iteration.at(0) == "Name") {
-			monsterInfo::name = iteration.at(1);
-		}
-		if (iteration.at(0) == "Description") {
-			monsterInfo::desc = iteration.at(1);
-		}
-		if (iteration.at(0) == "Breed") {
-			monsterInfo::breed = iteration.at(1);
-		}
-		if (iteration.at(0) == "Gender") {
-			monsterInfo::gender = iteration.at(1);
-		}
-		if (iteration.at(0) == "HP") {
-			::vector<string> s = split(iteration.at(1), ',');
-			for (int j = 0; j < 1; j++) {
-				monsterInfo::HP[j] = atoi(s.at(j).c_str());
-			}
-		}
-		if (iteration.at(0) == "SP") {
-			::vector<string> s = split(iteration.at(1), ',');
-			for (int j = 0; j < 1; j++) {
-				monsterInfo::SP[j] = atoi(s.at(j).c_str());
-			}
-		}
-		if (iteration.at(0) == "MP") {
-			::vector<string> s = split(iteration.at(1), ',');
-			for (int j = 0; j < 1; j++) {
-				monsterInfo::MP[j] = atoi(s.at(j).c_str());
-			}
-		}
-		if (iteration.at(0) == "Attack") {
-			::vector<string> s = split(iteration.at(1), ',');
-			for (int j = 0; j < 1; j++) {
-				monsterInfo::atk[j] = atoi(s.at(j).c_str());
-			}
-		}
-		if (iteration.at(0) == "Defence") {
+
+		cstringr(monsterInfo::name, "Name");
+		cstringr(monsterInfo::desc, "Description");
+		cstringr(monsterInfo::breed, "Breed");
+		cstringr(monsterInfo::gender, "Gender");
+		cstringr(monsterInfo::atkType, "Attack Type");
+		cstringr(monsterInfo::atkTypeWeak, "Weakness");
+		cintr(monsterInfo::HP, "HP");
+		cintr(monsterInfo::SP, "SP");
+		cintr(monsterInfo::MP, "MP");
+		cintr(monsterInfo::MP, "Attack");
+		cintr(monsterInfo::MP, "Defence");
+
+		/*/if (iteration.at(0) == "Drops") {
 			::vector<string> s = split(iteration.at(1), ',');
 			for (int j = 0; j < 1; j++) {
 				monsterInfo::def[j] = atoi(s.at(j).c_str());
 			}
-		}
-		if (iteration.at(0) == "Attack Type") {
-			monsterInfo::atkType = iteration.at(1);
-		}
-		if (iteration.at(0) == "Weakness") {
-			monsterInfo::atkTypeWeak = iteration.at(1);
-		}
-		if (iteration.at(0) == "Drops") {
-			::vector<string> s = split(iteration.at(1), ',');
-			for (int j = 0; j < 1; j++) {
-				monsterInfo::def[j] = atoi(s.at(j).c_str());
-			}
-		}
+		}/*/
 	}
 }
 

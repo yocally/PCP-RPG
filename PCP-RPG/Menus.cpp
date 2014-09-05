@@ -7,6 +7,7 @@ using namespace std;
 
 //Variables
 int menu = 1;
+bool thing = true;
 
 //Reterns
 
@@ -31,12 +32,20 @@ void indent(int i) {
 	}
 }
 
+void color(string color) {
+	string temp = "mkdir " + color;
+	system(temp.c_str());
+}
+
 void checkmenu() {
 	if (menu == 1) {
-		menus("Menus", "Mainmenu");;
+		menus("Menus", "Mainmenu");
 	}
 	if (menu == 2) {
-		menus("Menus", "Credits");;
+		menus("Menus", "Credits");
+	}
+	if (menu == 0) {
+
 	}
 }
 
@@ -55,7 +64,7 @@ void checkArgs() {
 			load();
 		}
 		if (rRe() == "o") {
-
+			
 		}
 		if (rRe() == "h") {
 			menu = 2;

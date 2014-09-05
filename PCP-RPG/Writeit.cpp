@@ -6,13 +6,11 @@
 using namespace std;
 
 //Variables
-
 namespace charinfo {
 	::string nameIn;
 	::string GMIn;
 	int LVLIn;
 	int HPIn;
-	int GPIn;
 	int STRIn;
 	int DEXIn;
 	int INTIn;
